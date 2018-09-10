@@ -9,3 +9,18 @@ $array[2] = "Arnold";
 for my $user (@array) {
     say "For-Loop User: $user";
 }
+say "";
+
+say "or you can setup an array in one-line";
+say '@array = ("Sonja", "Rose", "Vicky", "Florence");';
+@array = ("Sonja", "Rose", "Vicky", "Florence");
+say "";
+
+say "copy position 1 to End of Array to new array";
+say '@names = @array[ 1 .. $#array ];';
+say "";
+
+my @names = @array[ 1 .. $#array ];
+foreach my $i (0 .. $#names) {
+    say "$i - $names[$i]";
+}
