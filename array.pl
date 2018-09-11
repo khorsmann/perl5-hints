@@ -26,4 +26,6 @@ foreach my $i (0 .. $#names) {
     say "$i - $names[$i]";
 }
 
+say "array-end-pos: $#array";
+say "last array element: $array[-1]";
 print Dumper \@names;

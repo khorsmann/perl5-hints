@@ -55,15 +55,19 @@ for my $user (@array) {
 % For-Loop User: Tim
 % For-Loop User: Arnold
 ```
-## Define an Array in one-line
+## Overwrite an defined an Array in one-line
+
+Just put values to the array without the my keyword.
 
 ```perl
 @array = ("Sonja", "Rose", "Vicky", "Florence");
 ```
 
 ## Copy position 1 to End of Array to new array
+Array Index starts with 0. $#array is the endposition as number.
+
 ```perl
-@names = @array[ 1 .. $#array ];
+my @names = @array[ 1 .. $#array ];
 ```
 
 ## Loop over an Array and return index and value
@@ -80,7 +84,9 @@ foreach my $i (0 .. $#names) {
 
 ## Print Array with Data::Dumper
 
-Backslash @Array means here an reference to the array.
+Backslash @Arrayname means here an reference to the array.
+The array @names had only 3 elements, 0,1,2 indexed.
+The array @array had one more, indexed 0,1,2,3.
 
 ```perl
 use Data::Dumper;
@@ -90,4 +96,25 @@ $VAR1 = [
           'Vicky',
           'Florence'
         ];
+
+print Dumper \@array;
+$VAR1 = [
+          'Sonja',
+          'Rose',
+          'Vicky',
+          'Florence'
+        ];
 ```
+
+## Last indexnummer and last value of array
+
+```perl
+say "array-end-pos: $#array";
+% array-end-pos: 3
+```
+
+```perl
+say "last array element: $array[-1]";
+% last array element: Florence
+```
+
