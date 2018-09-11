@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 use v5.14;                              # use and enable features since 5.14
+use Data::Dumper;
 
 my @array;
 $array[0] = "Chuck";
@@ -24,3 +25,5 @@ my @names = @array[ 1 .. $#array ];
 foreach my $i (0 .. $#names) {
     say "$i - $names[$i]";
 }
+
+print Dumper \@names;
