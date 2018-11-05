@@ -118,3 +118,29 @@ say "last array element: $array[-1]";
 % last array element: Florence
 ```
 
+## Perl's special error-reporting variables
+
+Most build-in special error Variables have an longformat equivalent in the
+English Module</br>.
+
+| Variable | English               | Description                                   |
+|----------|-----------------------|-----------------------------------------------|
+| $!       | $ERRNO and $OS\_ERROR | Error from am operating system or libary call |
+| $?       | $CHILD\_ERROR         | Status from the last wait() call              |
+| $@       | $EVAL\_ERROR          | Error from the last eval()                    |
+| $^E      | $EXTENDED\_OS\_ERROR  | Error information specific to the OS          |
+
+
+```perl
+open my ($fh), '<', 'file_not_exist.txt'
+   or die "Couldn't open file! $!";
+```
+
+Or with English
+
+```perl
+use English;
+
+open my ($fh), '<', 'file_not_exist.txt'
+   or die "Couldn't open file! $OS_ERROR";
+```
